@@ -59,7 +59,7 @@
 
         <section id="page-title">
             <div class="container clearfix">
-                <h1>Vapouriz V Mini Plus Ohm kit</h1>
+                <h1 id="product-name">Vapouriz V Mini Plus Ohm kit</h1>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Shop</a></li>
@@ -82,18 +82,20 @@
                                                 <div class="slide" data-thumb="images/shop/thumbs/dress/1.png"><a
                                                         href="images/shop/dress/1.png"
                                                         title="Pink Printed Dress - Front View"
-                                                        data-lightbox="gallery-item"><img src="images/shop/dress/1.png"
+                                                        data-lightbox="gallery-item"><img id="product-img-one" src="images/shop/dress/1.png"
                                                             alt="Pink Printed Dress"></a></div>
                                                 <div class="slide" data-thumb="images/shop/thumbs/dress/1-1.png"><a
                                                         href="images/shop/dress/1-1.png"
                                                         title="Pink Printed Dress - Side View"
                                                         data-lightbox="gallery-item"><img
+                                                            id="product-img-two"
                                                             src="images/shop/dress/1-1.png"
                                                             alt="Pink Printed Dress"></a></div>
                                                 <div class="slide" data-thumb="images/shop/thumbs/dress/1-1.png"><a
                                                         href="images/shop/dress/1-1.png"
                                                         title="Pink Printed Dress - Back View"
                                                         data-lightbox="gallery-item"><img
+                                                            id="product-img-three"
                                                             src="images/shop/dress/1-1.png"
                                                             alt="Pink Printed Dress"></a></div>
                                             </div>
@@ -104,12 +106,12 @@
                             </div>
                             <div class="col_two_fifth product-desc">
 
-                                <div class="product-price"><del>$39.99</del> <ins>$24.99</ins></div>
+                                <div class="product-price"><ins id="product-price">$24.99</ins></div>
 
                                 <div class="clear"></div>
                                 <div class="line"></div>
 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero velit id eaque ex
+                                <p id="product-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero velit id eaque ex
                                     quae laboriosam nulla optio doloribus! Perspiciatis, libero, neque, perferendis at
                                     nisi optio dolor!</p>
 
@@ -155,7 +157,8 @@
                     <div class="container clearfix">
                         <div class="col_half">
                             Copyrights &copy; 2019 All Rights Reserved by Mr Vapy Inc.<br>
-                            <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+                            <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a>
+                            </div>
                         </div>
                         <div class="col_half col_last tright">
                             <div class="fright clearfix">
@@ -194,9 +197,9 @@
                             </div>
                             <div class="clear"></div>
                             <i class="icon-envelope2"></i> <a href="#" class="__cf_email__"
-                                data-cfemail="">info@mrvapy.com</a> <span
-                                class="middot">&middot;</span> <i class="icon-headphones"></i> +9567893458 <span
-                                class="middot">&middot;</span> <i class="icon-skype2"></i> MrVapyOnSkype
+                                data-cfemail="">info@mrvapy.com</a> <span class="middot">&middot;</span> <i
+                                class="icon-headphones"></i> +9567893458 <span class="middot">&middot;</span> <i
+                                class="icon-skype2"></i> MrVapyOnSkype
                         </div>
                     </div>
                 </div>
@@ -205,6 +208,38 @@
         </section>
 
 
+        <script type="text/javascript">
+            function getQueryVariable(variable) {
+                var query = window.location.search.substring(1);
+                var vars = query.split("&");
+                for (var i = 0; i < vars.length; i++) {
+                    var pair = vars[i].split("=");
+                    if (pair[0] == variable) {
+                        return pair[1];
+                    }
+                }
+
+                return (false);
+            }
+
+            document.getElementById("product-name").innerHTML = makeSplit(getQueryVariable("name"));
+            document.getElementById("product-desc").innerHTML = makeSplit(getQueryVariable("desc"));
+            document.getElementById("product-img-one").innerHTML = makeSplit(getQueryVariable("imgone"));
+            document.getElementById("product-price").innerHTML = makeSplit(getQueryVariable("price"));
+            document.getElementById("product-img-two").innerHTML = makeSplit(getQueryVariable("imgtwo"));
+            document.getElementById("product-img-three").innerHTML = makeSplit(getQueryVariable("imgthree"));
+
+            function makeSplit(someText) {
+                var temp = someText.replace(/%20/g, " ");
+                
+                return temp;
+            }
+
+
+
+
+
+        </script>
 
         <script data-cfasync="false"
             src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
