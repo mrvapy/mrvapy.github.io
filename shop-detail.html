@@ -82,21 +82,21 @@
                                                 <div class="slide" data-thumb="images/shop/thumbs/dress/1.png"><a
                                                         href="images/shop/dress/1.png"
                                                         title="Pink Printed Dress - Front View"
-                                                        data-lightbox="gallery-item"><img id="product-img-one" src="images/shop/dress/1.png"
+                                                        data-lightbox="gallery-item"><img id="product-img-one"
                                                             alt="Pink Printed Dress"></a></div>
                                                 <div class="slide" data-thumb="images/shop/thumbs/dress/1-1.png"><a
                                                         href="images/shop/dress/1-1.png"
                                                         title="Pink Printed Dress - Side View"
                                                         data-lightbox="gallery-item"><img
                                                             id="product-img-two"
-                                                            src="images/shop/dress/1-1.png"
+                                                            
                                                             alt="Pink Printed Dress"></a></div>
                                                 <div class="slide" data-thumb="images/shop/thumbs/dress/1-1.png"><a
                                                         href="images/shop/dress/1-1.png"
                                                         title="Pink Printed Dress - Back View"
                                                         data-lightbox="gallery-item"><img
                                                             id="product-img-three"
-                                                            src="images/shop/dress/1-1.png"
+                                                            
                                                             alt="Pink Printed Dress"></a></div>
                                             </div>
                                         </div>
@@ -224,10 +224,10 @@
 
             document.getElementById("product-name").innerHTML = makeSplit(getQueryVariable("name"));
             document.getElementById("product-desc").innerHTML = makeSplit(getQueryVariable("desc"));
-            document.getElementById("product-img-one").innerHTML = makeSplit(getQueryVariable("imgone"));
+            document.getElementById("product-img-one").src = makeSplit(getQueryVariable("imgone"));
             document.getElementById("product-price").innerHTML = makeSplit(getQueryVariable("price"));
-            document.getElementById("product-img-two").innerHTML = makeSplit(getQueryVariable("imgtwo"));
-            document.getElementById("product-img-three").innerHTML = makeSplit(getQueryVariable("imgthree"));
+            document.getElementById("product-img-two").src = makeSplit(getQueryVariable("imgtwo"));
+            document.getElementById("product-img-three").src = makeSplit(getQueryVariable("imgthree"));
 
             function makeSplit(someText) {
                 var temp = someText.replace(/%20/g, " ");
